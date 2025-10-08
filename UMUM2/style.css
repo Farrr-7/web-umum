@@ -38,7 +38,7 @@ body.darkmode {
 
 /* ======= NAVBAR ======= */
 .nav-glass {
-  width: 1500px;
+  width: 100%;
   background: var(--glass-bg);
   backdrop-filter: blur(var(--blur));
   border-bottom: 1.5px solid var(--glass-border);
