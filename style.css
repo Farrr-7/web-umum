@@ -4,7 +4,7 @@
 :root {
   --primary: #2093ff;
   --secondary: #ffffff;
-  --accent: #00E0FF;
+  --accent: #2798fa;
   --glass-bg: rgba(255, 255, 255, 0.18);
   --glass-border: rgba(255,255,255,0.34);
   --dark-bg: #15151a;
@@ -18,8 +18,8 @@ body {
   font-family: 'Montserrat', 'Inter', Arial, sans-serif;
   min-height: 100vh;
   margin: 0;
-  background: linear-gradient(135deg, #63c3ff 0%, #ffffff 100%);
-  color: #21213a;
+  background: linear-gradient(107deg, #63c3ff 0%, #ffffff 100%);
+  color: #ffffff;
   position: relative;
   overflow-x: hidden;
 }
@@ -30,7 +30,7 @@ body.darkmode {
 }
 
 .container {
-  width: 95%;
+  width: 100%;
   max-width: 1100px;
   margin: auto;
   position: relative;
@@ -84,9 +84,10 @@ body.darkmode {
   list-style: none;
   display: flex;
   gap: 1.8rem;
-  margin: 0;
-  padding: 0;
+  margin: 100;
+  padding: 10;
   transition: var(--transition);
+  margin-left: 60px; /* atur sesuai kebutuhan */
 }
 .nav-links li a {
   text-decoration: none;
@@ -97,12 +98,19 @@ body.darkmode {
   background: rgba(255,255,255,0.12);
   transition: background .2s, color .2s, transform .2s;
 }
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo kiri, nav kanan */
+}
+
 .nav-links li a:hover,
 .nav-links li a.active {
   background: var(--primary);
   color: #fff;
   transform: scale(1.09);
   box-shadow: 0 2px 10px #6c63ff33;
+  text-shadow: 0 2px 12px #4ac4fc;
 }
 
 /* Mobile Nav */
@@ -141,32 +149,48 @@ body.darkmode {
 }
 
 /* ======= HERO SECTION ======= */
+/* Hero Section dengan background foto */
 .hero-clear {
-  width: 100%;
-  padding: 4rem 0 2.5rem 0;
-  background: none;
   position: relative;
-}
-.glass-hero-card-clear {
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--blur));
-  border-radius: calc(var(--radius) + 12px);
-  border: 1.5px solid var(--glass-border);
-  box-shadow: var(--shadow);
-  padding: 3rem 2.3rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin-top: 2.5rem;
-  position: relative;
-  z-index: 2;
+  background: url("c:\Users\ffazf\Downloads\WhatsApp Image 2025-10-07 at 20.05.32.jpeg") no-repeat center center/cover;
 }
 
+/* Overlay transparan biar teks tetap terbaca */
+.hero-clear::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.2); /* lapisan transparan */
+  backdrop-filter: blur(6px); /* efek glass */
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Card di tengah (judul + deskripsi) */
+.glass-hero-card-clear {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  padding: 2rem;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
 .hero-title-clear {
   font-size: 2.8rem;
   font-weight: 700;
   color: var(--primary);
   letter-spacing: 1.4px;
   margin-bottom: 1.2rem;
-  text-shadow: 0 2px 12px #fff8;
+  text-shadow: 0 2px 12px #4ac4fc;
 }
 
 .hero-desc-clear {
@@ -250,7 +274,7 @@ body.darkmode {
 .feature-card-clear {
   min-width: 280px;
   flex: 1;
-  background: none;
+  background: #ffffff3f;
   box-shadow: none;
 }
 
